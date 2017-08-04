@@ -1,0 +1,44 @@
+{% extends "main.html" %} {% block content %} {% include "publicheader.html" %}
+<div class="flashed-messages">
+    <h4> 
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+    </h4> </div>
+<section>
+    <div class="parallax-section">
+        <div class="category">
+            <h3 id="cat">Categories</h3> {% for category in categories %}
+            <a href="{{ url_for('showItems', category_name = category.name) }}">
+                <h3>{{category.name}}</h3> </a>
+            {% endfor %}
+        </div>
+
+        <div class="cat-item">
+            <h3 id="item">Latest Items:</h3> {% if items %} {% for item in items %}
+            <h3 id="it">
+           <a href = "{{ url_for('showItemDetails', category_name = item.category.name , item_name = item.name) }}">
+            {{item.name }}</a>
+            </h3>(({{ item.category.name }}))
+            <br>
+            <br> {% endfor %} {% endif %} {% if categoryItems %} {% for item in categoryItems %}
+            <h3 id="it">
+           <a href = "{{ url_for('showItemDetails', category_name = item.category.name , item_name = item.name) }}">
+            {{item.name }}</a><br><br>
+         {% endfor %}
+          <script>
+         $("#item").text("Items");
+         </script>
+         {% endif %}
+
+        </div>
+    </div>
+</section>
+{% endblock %}

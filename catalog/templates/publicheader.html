@@ -1,0 +1,11 @@
+{% extends "main.html" %} {% block content %}
+<div class="navbar-default navbar-header">
+    <h1 class="navbar-brand">Item Catalog</h1>
+    <div class="entry-btn">
+        <a id="logbtn" href="{{ url_for('showLogin') }}">
+            <h2>Log In</h2> </a>
+    </div>
+</div>
+<div>
+    <h3><a id="showhome" href="{{ url_for('showCategories')}}">Show All Categories </a></h3></div>
+{% endblock %}

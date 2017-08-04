@@ -1,0 +1,22 @@
+{% extends "main.html" %} {% block content %} {% include "loginheader.html" %}
+
+<div id="editing">
+    <h3>Edit Category Item</h3>
+    <div>
+        <form action="{{url_for('editCategoryItem' , category_name = category.name ,item_name=item.name)}}" method="post">
+            <label>Name:</label>
+            <br>
+            <input type="text" name="name" value="{{ item.name }}">
+            <br>
+            <label>Description:</label>
+            <br>
+            <textarea maxlength="250" rows="6" name="description">{{ item.description }}</textarea>
+            <br>
+            <button type="submit" type="submit">Edit</button>
+        </form>
+        <a href='{{url_for(' showCategories ')}}'>
+            <button>Cancel</button>
+        </a>
+    </div>
+</div>
+{% endblock %}

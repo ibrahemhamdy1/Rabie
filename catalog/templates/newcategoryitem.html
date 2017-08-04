@@ -1,0 +1,19 @@
+{% extends "main.html" %} {% block content %} {% include "loginheader.html" %}
+
+<div id="editing">
+    <h3>New Category Item</h3>
+    <div>
+        <form action="{{url_for('newCategoryItem' , category_name = category_name)}}" method="post">
+            <label>Name:</label>
+            <br>
+            <input type="text" name="name" placeholder=" Category Item Name ">
+            <br>
+            <label>Description:</label>
+            <br>
+            <textarea maxlength="250" rows="6" name="description" placeholder="Description of the Category"></textarea>
+            <br>
+            <button type="submit" type="submit">Create</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

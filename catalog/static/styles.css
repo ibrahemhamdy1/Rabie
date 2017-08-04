@@ -1,0 +1,121 @@
+body {
+  background: rgb(225, 225, 225); 
+  font-family: 'Source Sans Pro', sans-serif; 
+  font-weight: 300; 
+}
+
+html, body {
+  width: 100%;
+}
+
+html {
+  font-size: 100%;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  font-weight: bold;}
+
+#it , form {
+  display: inline;
+}
+
+#item,#cat {
+  color: #000000;
+  font-weight: bold;}
+
+p {
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 28px;}
+
+a {
+  text-decoration: none;}
+
+a:visited,
+a:focus {
+  outline: none;}
+
+a  # addcat, a#additem, a#showhome, h2, .editing {
+  color: # 00aa00;
+}
+
+.parallax-section {
+  width: 80% ;
+  padding-left: 20 % ;
+  padding-right: 20%;}
+
+.category {
+  padding: 10px;
+  background - color:  #ffffff;
+  float: left;
+  width: 40% ;
+  overflow: hidden;
+  margin-right: 10px;
+  background-color: rgb(255, 225, 196);}
+
+.cat-item {
+  padding: 10px;
+  background-color:  # ffffff;
+  float: left;
+  width: 40% ;
+  overflow: hidden;}
+
+
+.navbar-default {
+  background:  #484848;
+  border: none;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.04);
+  margin: 0;
+  overflow: auto;}
+
+.navbar-default .navbar-brand {
+  color:  #f5a623;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 40px;
+  padding: 10px;
+  margin: 0px;
+  float: left;}
+
+.flashed-messages {
+  text-align: center;
+  color: green;}
+
+.entry-btn {
+  float: right;
+  margin: 20px;}
+
+.Item-Description,
+.Loginsection {
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-top: 10%;
+  padding: 5px;
+  background-color: # ffffff;
+}
+
+#it-heading {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0px;
+  background-color:  #000000;
+  color: #ffffff;
+}
+
+#userimg {
+  width: 200px;
+  height: 200px;
+  border - radius: 150px;
+  -webkit - border - radius: 150px;
+  -moz - border - radius: 150px;
+  -webkit - border - radius: 150px;
+  -moz-border-radius: 150px;}
+
+#result,#editing {
+  width: 50%;
+  padding: 10px;
+  margin - left: 40%;
+  margin-top: 15%;}

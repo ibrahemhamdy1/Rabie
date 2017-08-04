@@ -1,0 +1,12 @@
+{% extends "main.html" %} {% block content %} {% include "publicheader.html" %}
+<section>
+    <div class="Item-Description">
+        <div id="it-heading">
+            Category : {{ category.name }}
+            <br> Item Name : {{ item.name }}
+        </div>
+        <h4>Description</h4>
+        <p>{{item.description}} </p>
+    </div>
+</section>
+{% endblock %}

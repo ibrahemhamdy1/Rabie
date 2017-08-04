@@ -1,0 +1,18 @@
+{% extends "main.html" %} {% block content %} {% include "loginheader.html" %}
+<section>
+    <div class="Item-Description">
+        <div id="it-heading">
+            Category : {{ category.name }}
+            <br> Item Name : {{ item.name }}
+        </div>
+        <h4>Description</h4>
+        <p>{{item.description}} </p>
+        <a class="editing" href="{{url_for('editCategoryItem', category_name = category.name , item_name = item.name)}}">Edit</a> |
+
+        <a class="editing" href="{{url_for('deleteCategoryItem', category_name = category.name , item_name = item.name)}}">Delete</a>
+        <br>
+        <br>
+
+    </div>
+</section>
+{% endblock %}

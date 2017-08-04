@@ -1,0 +1,73 @@
+{% extends "main.html" %} {% block content %} {% include "loginheader.html" %}
+<div class="flashed-messages">
+    <h4> 
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+    </h4> </div>
+<section>
+    <div class="parallax-section">
+        <div class="category">
+            <h3> <a id="addcat" href="{{url_for('newCategory')}}" > Add New Category </a> </h3>
+            <h3 id="cat">Categories</h3> {% if categories %} {% for category in categories %}
+            <a href="{{ url_for('showItems', category_name = category.name) }}">
+                <h3 id="it">{{category.name}}</h3></a>
+            <a class="editing" href="{{url_for('editCategory', category_name = category.name)}}">Edit</a> |
+            <a class="editing" href="{{url_for('deleteCategory', category_name = category.name)}}">Delete</a>
+            <br>
+            <br> {% endfor %} {% endif %} {% if categories == "" %}
+            <h4>
+           you are new to the system , please create your categories and its items 
+         </h4> {% endif %}
+        </div>
+
+        <div class="cat-item">
+            <h3> <a id="additem">  </a> </h3>
+            <h3 id="item">Latest Items:</h3> {% if categories and items %} {% for item in items %}
+            <h3 id="it">
+           <a href = "{{ url_for('showItemDetails', category_name = item.category.name , item_name = item.name) }}">
+            {{item.name }}</a>
+            </h3>(({{ item.category.name }}))
+
+            <a class="editing" href="{{url_for('editCategoryItem', category_name = item.category.name , item_name = item.name)}}">Edit</a> |
+
+            <a class="editing" href="{{url_for('deleteCategoryItem', category_name = item.category.name , item_name = item.name)}}">Delete</a>
+            <br>
+            <br> {% endfor %} {% endif %} {% if categoryItems=="" and items=="" %}
+            <h4>
+           you are new to the system , please create your categories and its items 
+        <script>
+        $("#additem").remove()
+        </script>
+         </h4> {% endif %} {% if categoryItems %} {% for item in categoryItems %}
+            <h3 id="it">
+           <a href = "{{ url_for('showItemDetails', category_name = item.category.name , item_name = item.name) }}">
+            {{item.name }}</a></h3>
+
+            <a class="editing" href="{{url_for('editCategoryItem', category_name = item.category.name , item_name = item.name)}}">Edit</a> |
+
+            <a class="editing" href="{{url_for('deleteCategoryItem', category_name = item.category.name , item_name = item.name)}}">Delete</a>
+            <br>
+            <br> {% endfor %}
+            <script>
+                $("#item").text("Items");
+                $("#additem").text("Add New Item")
+                $("#additem").attr("href", "{{ url_for('newCategoryItem', category_name = category.name) }}")
+            </script>
+            {% else %}
+            <script>
+                $("#additem").remove()
+            </script>
+            {% endif %}
+
+        </div>
+    </div>
+</section>
+{% endblock %}
