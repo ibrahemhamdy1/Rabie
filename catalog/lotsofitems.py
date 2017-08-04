@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 from database_setup import Category, Base, Item, User
 
 # create an engine points to the itemcatalog database
-engine = create_engine('sqlite:///itemscatalog.db')
+#engine = create_engine('sqlite:///itemscatalog.db')
 # Bind the engine to the metadata of the Base class so that the
 # declaratives can be accessed through a DBSession instance
 Base.metadata.bind = engine
